@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Comments</h1>
+        <div class="comment1">
+            <p>this is first Comments</p>  
+        </div>
+        <div class="comment2">
+            <p>This is second comments</p>
+            <p style="display: none;">This is hidden comment</p>
+        </div>
+    </div>
+
+    <button onclick="addComment()">Add Comment</button>
+    <button onclick="changeHTML()">changeHTML</button>
+    <button onclick="getInnerTextAndTextContext()">get text and content</button>
+        <div id="output"></div>
+</body>
+
+<script>
+    function addComment(){
+        let div=document.createElement("div");
+        div.innerHTML="<P>This is a third comments</p>";
+            div.className="comment3";
+           let comment2 =document.querySelector(".comment2");
+           comment2.appendChild(div);
+    }
+    function changeHTML(){
+       
+        let container=document.querySelector("#container");
+         container.innerHTML="<h1>Hello how are you</h1>";
+    }
+    function getInnerTextAndTextContext(){
+               let container=document.querySelector("#container");
+               let output=document.querySelector("#output");
+
+               output.innerHTML=`
+               <p>InnterText: ${container.innerText}</p>
+               <p>TextContent: ${container.textContent}</p>
+               `
+    }
+</script>
+</html>
