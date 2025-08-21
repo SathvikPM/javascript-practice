@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice</title>
+  <style>
+      .box { color: blue; margin: 10px; }
+  </style>
+</head>
+<body>
+  
+  <h1 id="title">practice page</h1>
+
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+
+  <p>PARAGRAPH</p>
+  <p>paragraph2</p>
+
+  <div id="container">
+    <p>this is a div container</p>
+  </div>
+
+  <button onclick="selectById()">select by id</button>
+  <button onclick="selectByClass()">class button</button>
+  <button onclick="selectByTag()">tag button</button>
+  <button onclick="selectByDiv()">div button</button>
+  <button onclick="selectByQuary()">quary button</button>
+  <button onclick="selectByAllQuary()">quaryAll button</button>
+
+<script>
+
+  function selectById(){
+    let msg=document.getElementById("title");
+    
+    msg.innerText="practice done";
+  }
+
+  function selectByClass(){
+    let boxes=document.getElementsByClassName("box");
+    boxes[0].innerText="Boxe1 is opened";
+    boxes[1].innerText="Box2 is closed";
+    
+  }
+
+  function selectByTag(){
+    let para=document.getElementsByTagName("p");
+      for (let i = 0; i < para.length; i++) {
+    para[i].innerText = "Paragraph is changing";
+    }
+  }
+
+  function selectByDiv(){
+    let container=document.getElementById("container");
+    container.innerText="this is a div container changed";
+  }
+
+  function selectByQuary(){
+    let msg=document.querySelector(".box"); //give the first elemt with the class box
+    msg.innerText="quary selector is working";
+
+  }
+
+  function selectByAllQuary(){
+    let msg=document.querySelectorAll(".box"); //gives all elements with the class box
+    msg[0].innerText="quary selector for box 1";
+    msg[1].innerText="quary selector for box2";
+  }
+
+  
+  
+
+
+
+</script>
+
+</body>
+</html>
