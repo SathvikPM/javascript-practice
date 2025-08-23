@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3</title>
+</head>
+<body>
+    <h2>Dom manupulation practice</h2>
+
+    <div id="box">Hello</div>
+
+    <div id="container">
+         <p id="para1">This is original paragragh</p>
+    </div>
+
+    <div id="container2">
+      <ul id="menu">
+        <li>Hii</li>
+        <li>hello</li>
+        <li>Sathvik</li>
+      </ul>
+
+    </div>
+    
+    <button onclick="useAfter()">after</button>
+    <button onclick="useBefore()">Before</button>
+    <button onclick="useAppend()">append</button>
+    <button onclick="usePrepend()">prepend</button>
+    <button onclick="useInsertAdjacentHtml()">insertHTML</button>
+    <button onclick="usereplacechild()">replaceChild</button>
+    <button onclick="userCloneNode()">cloneNode</button>
+    <button onclick="useremoveChild()">removeChild</button>
+    <button onclick="useinsertBefore()">insertbefore</button>
+    <button onclick="useRemove()">remove</button>
+
+    <script>
+
+        function useAfter(){
+            let para1=document.querySelector("#para1");
+            let para2=document.createElement("p");
+            para2.innerHTML="This is paraggraph after original paragragh";
+            para1.after(para2); //after method to add after the element
+            para2.id="para2";
+        }
+        function useBefore(){
+            let para1=document.querySelector("#para1");
+            let para2=document.createElement("p");
+            para2.innerHTML="this is paragragh before the original paragraph";
+            para1.before(para2); //before method to add before the elemt
+        }
+        function usePrepend(){
+            document.querySelector("#box").prepend("Hey, ");//Inside the element, at the start
+        }
+        function useInsertAdjacentHtml(){
+            let menu=document.querySelector("#menu");
+            menu.insertAdjacentHTML("afterbegin","<li>this is new para</li>");//for this we can use afterbegin, beforebegin, beforeend, afterend
+
+        }
+        function usereplacechild(){
+            let container=document.getElementById("container2");
+            let newpara=document.createElement("p");
+            newpara.innerHTML="This is new paragragh";
+            let oldpara=document.querySelector("#menu");
+            container.replaceChild(newpara,oldpara);//replace the newchild with oldchild
+        }
+
+        function  userCloneNode(){
+            let container=document.querySelector("#container");
+            let newNode=container.cloneNode(true); //clone the exact copy
+            document.body.appendChild(newNode);
+        }
+
+        function useremoveChild(){
+            let menu=document.getElementById("menu");
+            let firstli=menu.getFirstElementChild;
+            menu.removeChild(firstli); //it will remove the child node either first or last 
+            
+        }
+        function useinsertBefore(){
+            let menu=document.getElementById("menu");
+            let firstEle=menu.firstElementChild;
+            let newElement=document.createElement("li");
+            newElement.innerText="sagar";
+            menu.insertBefore(newElement,firstEle); //it will insert before the node
+        }
+        function useRemove(){
+            let para=document.getElementById("para1"); 
+            para.remove();//removes the element
+        }
+        function useAppend(){
+            document.querySelector("#box").append(" World!"); //insert inside the elent
+           
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
