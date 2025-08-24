@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners Practice</title>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <form id="myform">
+        <input type="text" placeholder="Type Here">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="box" style="width:100px;height:100px;background:blue;"></div>
+    <p id="output"></p>
+    <button id="mybtn">dispatch event</button>
+
+
+    <script>
+       const btn=document.getElementById("btn");
+       const form=document.getElementById("myform");
+       const box=document.getElementById("box");
+       const output=document.getElementById("output");
+
+       // 1. addEventListener → runs code when button is clicked
+       btn.addEventListener("click", ()=>{
+        alert("Button clicked");
+       });
+
+       // 2. removeEventListener → remove mouseover after 5 seconds
+       function sayHello(){
+        console.log("say hello");
+       }
+       btn.addEventListener("mouseover",sayHello)
+       setTimeout(()=>{
+          btn.removeEventListener("mouseover",sayHello);
+          console.log("Mouse event removed")
+       },5000); 
+
+       // 3. dispatchEvent → trigger click without user clicking
+       const mybtn=document.getElementById("mybtn");
+       mybtn.addEventListener("click",()=>{
+        alert("This is happening by dispatch event!");
+       });
+       mybtn.dispatchEvent(new Event("click"));
+
+       // 4. preventDefault → stop form from reloading page
+       form.addEventListener("submit",(event)=>{
+          event.preventDefault();
+          alert("form submitted");
+       });
+
+       // 5. stopPropagation → stop event bubbling to body
+       box.addEventListener("click",(event)=>{
+           event.stopPropagation();
+          alert("Box clicked");
+       });
+       document.body.addEventListener("click",()=>{
+        alert("body Clicked");
+       });
+
+       // 6. stopImmediatePropagation → block other dblclick handlers
+        btn.addEventListener("dblclick", (e) => {
+        e.stopImmediatePropagation();
+        console.log("First listener, stops others");
+        });
+        btn.addEventListener("dblclick", () => {
+        console.log("This will not run!");
+        });
+
+       // 7. focus and blur → detect input focus change
+       form.querySelector("input").addEventListener("focus",()=>{
+        console.log("input is focused");
+       });
+       form.querySelector("input").addEventListener("blur",()=>{
+        console.log("Input lost focus");
+       })
+
+    </script>
+</body>
+</html>
