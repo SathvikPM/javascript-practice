@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes methods</title>
+</head>
+<body>
+    <h2>Dom Attributes Methods</h2>
+       
+    <a id="myLink" href="https://example.com" title="Example Site" class="linkClass">Example Link</a>
+    <br/><br/>
+
+    <input type="text" id="myInput" value="Hello World" disabled/>
+     <br/> <br/>
+
+    <input type="checkBox"  id="mycheckbox" checked>
+    <label for="mycheckbox">Check me</label>
+    <br/> <br/>
+
+    <div id="myDiv" data-user="Sathvik" data-role="Student" class="box">Sample Div</div>
+
+    <button onclick="showHref()">getAttribute</button>
+    <button onclick="changeTitle()">setttribute</button>
+    <button onclick="removeDisable()">Remove Attribute</button>
+    <button onclick="checkClass()">hasAttribute</button>
+    <button onclick="listAttributes()">List of Attributes</button>
+    <button onclick="changeId()">Change element</button>
+    <button onclick="chnageClassName()">Change Class Name</button>
+    <button onclick="changeValue()">change value</button>
+    <button onclick="toggleChecked()">change checked</button>
+    <button onclick="toggledisable()">change disable</button>
+    <button onclick="getdataset()">get dataset</button>
+
+
+
+    <div id="output">
+        <!-- outpt is displayed here -->
+    </div>
+
+    <script>
+    
+       //Attributes are the extra information provided inside the html tags- href,target,title
+    function showHref(){
+        const link=document.getElementById("myLink");
+        let href=link.getAttribute("href");//to get tge Attributes
+        output.textContent=`getAttribute('href'): /n${href}`;
+    }
+
+    function changeTitle(){
+        let link=document.getElementById("myLink");
+        link.setAttribute("title","New Title Set!");//example site changes to new titile set or we can set the attributes
+        document.getElementById("output").textContent=`setAttribute('title'):\n Title changed to "${link.getAttribute("title")}"`;
+    } 
+
+    function removeDisable(){
+        let link=document.getElementById("myInput");
+        link.removeAttribute("disable");//to remove the Attribute
+        document.getElementById("output").textContent="removeAttribute('disable'):\nInput is now Enabled.";
+    }
+
+    function checkClass(){
+        let link=document.getElementById("myLink");
+        let hasClass=link.hasAttribute("class");
+        alert(hasClass);
+    }//to check the Attributes is present or not
+
+    function listAttributes(){
+        let link=document.getElementById("myLink");
+        let attrs=link.attributes;//to get the list of Attributes
+        let result=[];// 1. Create an empty array to hold strings describing each attribute.
+        for(let attr of attrs){// 2. Loop over each attribute object in the 'attrs' collection.
+           // 3. For each attribute, create a string like 'name = "value"'
+           //attr.name is the attribute's name (like 'href', 'id', etc.)
+           //attr.value is the attribute's value (like 'https://example.com', 'myLink', etc.)
+            result.push(`${attr.name}="${attr.value}"`);
+        }
+        alert(result);
+    }
+    function changeId(){
+        let link=document.getElementById("myLink");
+        alert(link.getAttribute("id"))
+        link.id="newLinkId"; //to change the element
+        alert(link.getAttribute("id"));
+    }
+    function chnageClassName(){
+        let link=document.getElementById("myLink");
+        alert(link.getAttribute("class"));
+        link.className="new anotherClass"; //to change the classNane
+        alert(link.getAttribute("class"));
+    }
+    function changeValue(){
+        let input=document.getElementById("myInput");
+        alert(input.value);
+        input.value="Hello Sathvik"; //to change the value
+        alert(input.value);
+    }
+    function toggleChecked(){
+        let checkbox=document.getElementById("mycheckbox");
+        checkbox.checked=false; //it will change the ckeckbox
+         alert(checkbox.checked)
+
+    }
+    function toggledisable(){
+        let input=document.getElementById("myInput");
+        input.disabled=false; //to disable the input after that we can give input evertime
+          input.disabled = !input.disabled; // toggles true/false -switch between disabled and enabled each time you click
+
+    }
+    function getdataset(){
+        let div=document.getElementById("myDiv");
+        alert(div.dataset.user);
+        alert(div.dataset.role);
+
+    }
+
+
+
+
+ 
+   
+</script>
+
+    
+</body>
+
+
+
+</html>
