@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Step 1 – Click Event (Simple)</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { padding: 8px 12px; }
+  </style>
+</head>
+<body>
+  <h2>Click Event</h2>
+
+  <!-- for single click -->
+  <button onclick="countClick()">Click Me</button>
+  <p id="msg">Clicked 0 times</p>
+
+  <!-- for double click  -->
+  <button ondblclick="showMessageForDblClick()">Double click Me</button>
+  <p id="Dblmsg"></p>
+
+  <!-- for click  -->
+  <button id="click">just click</button>
+
+  <!-- for mouse hover -->
+   <h2>MouseOver Event</h2>
+   <div id="box" onmouseover="changeColour()" onmouseout="resetColor()">
+    Hover over me
+   </div>
+
+   <!-- for mouse up and down  -->
+   <div id="box1" onmousedown="down()" onmouseup="up()">
+    click and hold me
+   </div>
+   <p id="msg"></p>
+
+   <!-- for keydown  and key up-->
+    <input type="text" id="myInput" placeholder="type something">
+    <p id="log"></p>
+
+    <input type="text" id="inputBox" placeholder="Type Something here">
+    <p id="inputLog"></p>
+
+    <!-- change event  -->
+    <select id="dropdown">
+      <option value="">Select</option>
+      <option value="one">one</option>
+      <option value="two">Two</option>
+      <option value="three">Three</option>
+    </select>
+
+    <p id="changeLog"></p>
+
+    <!-- Focus & Blur -->
+    <input type="text" id="focusInput" placeholder="Click inside me">
+    <p id="focusLog"></p>
+
+    <!-- form events submit and reset  -->
+    <form id="myform">
+      <input type="text" placeholder="Enter your name">
+      <button type="submit">submit</button>
+      <button type="reset">Reset</button>
+    </form>
+    <p id="formLog"></p>
+<!-- Clipboard Events -->
+    <input type="text" id="clipInput" placeholder="Try copy, cut, or paste here">
+    <p id="clipLog"></p>
+
+  </body>
+  <script>
+    
+//    for single click 
+    let count=0;
+    function countClick(){
+        count++;
+        document.getElementById('msg').textContent='clicked'+count+'times';
+    }
+//  for double click
+    function showMessageForDblClick(){
+        document.getElementById("Dblmsg").textContent="you double clicked the btn";
+    }
+
+//  for just click
+    document.getElementById("click").addEventListener("click",()=>{
+      alert("just clicked ")
+    });
+
+//for onmouseover
+    function changeColour(){
+        document.getElementById("box").style.background="lightgreen";
+        document.getElementById("box").textContent="mouse Over!";
+    }
+
+//for onmouseout
+    function resetColor(){
+        document.getElementById("box").style.background="lightgray";
+        document.getElementById("box").textContent="Hover over me";
+    }
+
+// for mousedown 
+    function down(){
+      document.getElementById("box1").style.background="tomato";
+      document.getElementById("msg").textContent="Mouse is DOWN(button pressed)"
+    }
+  // for mouseup 
+    function up(){
+      document.getElementById("box1").style.background="lightgray";
+      document.getElementById("msg").textContent="Mouse is up(button released)"
+    }
+    // for keydown  and key up
+    const input = document.getElementById("myInput");
+    const log = document.getElementById("log");
+
+    input.addEventListener("keydown", function(e) {
+      log.textContent = "Key Down: " + e.key;
+    });
+    input.addEventListener("keyup", function(e) {
+      log.textContent = "Key Up: " + e.key;
+    });
+
+    //  change event
+    const dropdown=document.getElementById("dropdown");
+    const changeLog=document.getElementById("changeLog");
+
+    dropdown.addEventListener("change",function(e){
+      changeLog.textContent="Dropdown Changed to: "+e.target.value;
+    });
+
+
+// <!-- Focus & Blur -->
+    const focusInput=document.getElementById("focusInput");
+    const focusLog=document.getElementById("focusLog")
+
+    focusInput.addEventListener("focus", function(){
+      focusLog.textContent="Input is focused"
+    });
+
+    focusInput.addEventListener("blur", function(){
+      focuslog.textContent="input losts focus";
+    });
+
+// form events submit and reset
+    const form=document.getElementById("myform");
+    const formLog=document.getElementById("formLog");
+
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        formLog.textContent="Form Submited";
+    });
+
+    form.addEventListener("reset", function(){
+      formLog.textContent="form Reset";
+    });
+
+    // <!-- Clipboard Events --> 
+    const clipInput=document.getElementById("clipInput");
+    clipInput.addEventListener("copy",()=>{
+      clipLog.textContent="you copied text"
+    })
+
+    clipInput.addEventListener("cut", () => {
+    clipLog.textContent = "You cut text ✂️";
+  });
+
+  clipInput.addEventListener("paste", () => {
+    clipLog.textContent = "You pasted text 📥";
+  });
+
+
+
+
+
+
+
+
+
+  </script>
+  </body>
+</html>
