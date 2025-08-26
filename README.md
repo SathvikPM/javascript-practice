@@ -1,17 +1,64 @@
-Practice Files 📁
+# JavaScript Practice Files 📁
 
-Selecting Elements Using DOM - Day 1 🔍  
-Practice on selecting elements using methods like getElementById, querySelector, getElementsByClassName, and getElementsByTagName.
+This repository contains my daily practice files for learning JavaScript DOM and Events.  
+Each day focuses on a specific topic with hands-on examples.
 
-DOM Manipulating Elements - Day 2 ✏️  
-Practice using createElement, appendChild, innerHTML, innerText, and textContent to modify the DOM.
+---
 
-DOM Manipulating Methods - Day 3 ⚡  
-Practice using advanced DOM manipulation methods like after, before, prepend, append, insertAdjacentHTML, replaceChild, cloneNode, removeChild, insertBefore, and remove.
+## Day 1 🔍 – Selecting Elements Using DOM
+Practice on selecting elements using methods like:
+- `getElementById`
+- `querySelector`
+- `getElementsByClassName`
+- `getElementsByTagName`
 
-Event Listeners - Day 4 🎧  
-Practice using event handling methods like addEventListener, removeEventListener, dispatchEvent, preventDefault, stopPropagation, stopImmediatePropagation, focus, and blur.
+---
 
-DOM Attributes Methods - Day 5 🏷️  
-Practice using attribute-related methods like getAttribute, setAttribute, removeAttribute, hasAttribute, attributes,  
-id, className, value, checked, disabled, and dataset.
+## Day 2 ✏️ – DOM Manipulating Elements
+Practice using element manipulation methods like:
+- `createElement`
+- `appendChild`
+- `innerHTML`
+- `innerText`
+- `textContent`
+
+---
+
+## Day 3 ⚡ – DOM Manipulating Methods
+Practice using advanced DOM manipulation methods like:
+- `after`, `before`, `prepend`, `append`
+- `insertAdjacentHTML`
+- `replaceChild`, `cloneNode`
+- `removeChild`, `insertBefore`, `remove`
+
+---
+
+## Day 4 🎧 – Event Listeners
+Practice using event handling methods like:
+- `addEventListener`
+- `removeEventListener`
+- `dispatchEvent`
+- `preventDefault`
+- `stopPropagation`, `stopImmediatePropagation`
+- `focus`, `blur`
+
+---
+
+## Day 5 🏷️ – DOM Attributes Methods
+Practice using attribute-related methods like:
+- `getAttribute`, `setAttribute`
+- `removeAttribute`, `hasAttribute`
+- `attributes`
+- `id`, `className`, `value`, `checked`, `disabled`, `dataset`
+
+---
+
+## Day 6 🖱️ – Common JavaScript Events
+Practice using common JavaScript events like:
+- Click, Double Click
+- Mouse Events: `mouseover`, `mouseout`, `mousedown`, `mouseup`
+- Keyboard Events: `keydown`, `keyup`
+- Form Events: `change`, `focus`, `blur`, `submit`, `reset`
+- Clipboard Events: `copy`, `cut`, `paste`
+
+---
