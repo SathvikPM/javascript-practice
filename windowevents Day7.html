@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Practice</title>
+</head>
+ <style>
+    body {
+      height: 2000px; /* to test scroll */
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #log {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: red;
+      border: 1px solid gray;
+      padding: 10px;
+      width: 250px;
+    }
+ </style>
+<body>
+    <h1>Window usage & Events Demo</h1>
+    <button onclick="showAlert()">Click for Alert</button>
+    <button onclick="changeBackGround()">change Background</button>
+    <p id="demoText">this text will be updated using window.document</p>
+
+    <div id="log">waiting for events</div>
+    
+</body>
+<script>
+    // Alert example
+    function showAlert(){
+        window.alert("this is a alert");
+    }
+    //Access DOM via windwow.document
+    function changeBackGround(){
+        window.document.body.style.background="lightblue";
+        document.getElementById("demoText").textContent=
+        "Background changed using window.dcoment";
+    }
+
+    // Global variable (becomes a property of window)
+    var myglobal="sathvik";
+    console.log(window.myglobal) // Accessible through window
+
+            //   window Events 
+
+    // DOMContentLoaded
+    document.addEventListener("DOMContentLoaded",()=>{
+        alert("html is loaded");
+          log.textContent = "📄 DOMContentLoaded: HTML parsed & ready";
+    })
+
+     // Load
+    window.addEventListener("load",()=>{
+        alert("page is fully loaded(including Css and images)")
+        log.textContent = "✅ Window Load: Page fully loaded (including images)";
+    });
+
+    //resize
+    window.addEventListener("resize",()=>{
+       log.textContent="Resize:"+window.innerWidth + "x" + window.innerHeight;
+    }) //try to resize the window
+
+    //scroll
+    window.addEventListener("scroll",()=>{
+        log.textContent="scroll: Y="+window.scrollY; //try scrolling the mouse
+    });
+
+    // Before unload    
+    window.addEventListener("beforeunload",()=>
+    {
+      event.preventDefault();
+      event.returnValue="";
+    });//The browser shows a confirmation dialog asking whether you really want to leave the page when u closes and refreshes 
+
+   // Online  //try connecting internet on 
+    window.addEventListener("online",()=>{
+        alert("u are in oneline"); 
+        log.textContent="Online: you are back online!";
+    });
+
+    // Offline //try connecting internet off
+    window.addEventListener("offline",()=>{
+        alert("u are offline") //
+        log.textContent="offlinr: you lost internet";
+    });
+
+
+</script>
+</html>
