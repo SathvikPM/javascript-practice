@@ -62,3 +62,15 @@ Practice using common JavaScript events like:
 - Clipboard Events: `copy`, `cut`, `paste`
 
 ---
+
+## Day 7 🪟 – Window Usage & Events
+Practice using `window` object and events like:
+- `alert`
+- `DOMContentLoaded`
+- `load`
+- `resize`
+- `scroll`
+- `beforeunload`
+- `online` and `offline`
+
+---
