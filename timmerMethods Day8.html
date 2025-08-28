@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Timer Methods Practice</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { margin: 5px; padding: 8px 15px; }
+    #box, #ball {
+      width: 50px; height: 50px; position: absolute;
+    }
+    #box { background: red; top: 250px; }
+    #ball { background: blue; border-radius: 50%; top: 350px; }
+  </style>
+</head>
+<body>
+  <h1>JS Timer Methods Practice</h1>
+
+  <h2>1.SetTimeOut and clearTimeOut</h2>
+  <button onclick="startTimeOut()">Start TimeOut</button>
+  <button onclick="cancelTimeOut()">Cancel Timeout</button>
+  <p id="timeoutMsg"></p>
+
+
+  <h2>2.setInterval and ClearInterval</h2>
+  <button onclick="startInterval()">Start Counter</button>
+  <button onclick="stopInterval()">Stop Counter</button>
+  <p id="counterMsg"></p>
+
+   <!-- requestAnimationFrame / cancelAnimationFrame -->
+  <h2>3. requestAnimationFrame & cancelAnimationFrame</h2>
+  <button onclick="startBox()">Start Box Move</button>
+  <button onclick="stopBox()">Stop Box Move</button>
+  <div id="box"></div>
+
+  <button onclick="startBall()">Start Ball Bounce</button>
+  <button onclick="stopBall()">Stop Ball Bounce</button>
+  <div id="ball"></div>
+
+
+  <script>
+   let timeoutId;
+   function startTimeOut() {
+      document.getElementById("timeoutMsg").innerText = "Waiting 3 seconds...";
+      timeoutId = setTimeout(() => {
+        document.getElementById("timeoutMsg").innerText = "⏰ Timeout finished!";
+      }, 3000);
+    }
+    function cancelTimeOut(){
+        document.getElementById("timeoutMsg").innerText="TimeOut cancelled!";
+    }
+
+    let intervalId, count=0;
+    function startInterval(){
+        count=0;
+        intervalId=setInterval(()=>{
+            count++;
+            document.getElementById("counterMsg").innerText="Counter: "+count;
+        },1000);
+    }
+    function stopInterval(){
+        clearInterval(intervalId);
+        document.getElementById("counterMsg").innerText+="(Stopped)";
+    }
+
+    let box=document.getElementById("box");
+    let pos=0,boxId;
+    function moveBox(){
+        pos+=2;
+        box.style.left=pos+"px";
+        if(pos<300){
+            boxId=requestAnimationFrame(moveBox);
+        }
+    }
+    function startBox() {
+      pos = 0;
+      cancelAnimationFrame(boxId);
+      boxId = requestAnimationFrame(moveBox);
+    }
+    function stopBox() {
+      cancelAnimationFrame(boxId);
+    }
+
+    // Ball Bounce
+    let ball = document.getElementById("ball");
+    let ballPos = 0, dir = 2, ballId;
+    function moveBall() {
+      ballPos += dir;
+      ball.style.left = ballPos + "px";
+      if (ballPos > 300 || ballPos < 0) dir *= -1;
+      ballId = requestAnimationFrame(moveBall);
+    }
+    function startBall() {
+      ballPos = 0; dir = 2;
+      cancelAnimationFrame(ballId);
+      ballId = requestAnimationFrame(moveBall);
+    }
+    function stopBall() {
+      cancelAnimationFrame(ballId);
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+  </script>
+
+</body>
+</html> 
