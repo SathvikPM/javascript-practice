@@ -74,3 +74,10 @@ Practice using `window` object and events like:
 - `online` and `offline`
 
 ---
+
+## Day 8 ⏱️ – JS Timer Methods
+Practice using JavaScript timer and animation methods like:
+- `setTimeout`, `clearTimeout`
+- `setInterval`, `clearInterval`
+- `requestAnimationFrame`, `cancelAnimationFrame`
+- Moving and animating elements on the page
