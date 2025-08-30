@@ -81,3 +81,13 @@ Practice using JavaScript timer and animation methods like:
 - `setInterval`, `clearInterval`
 - `requestAnimationFrame`, `cancelAnimationFrame`
 - Moving and animating elements on the page
+
+---
+
+## Day 9 🎨 – JS CSS Manipulation
+Practice for understanding DOM style and `classList` methods, including:  
+- Direct style manipulation: `element.style`, `element.style.cssText`  
+- Reading styles: `getComputedStyle(element)`  
+- Class handling: `classList.add()`, `classList.remove()`, `classList.toggle()`, `classList.contains()`  
+
+
