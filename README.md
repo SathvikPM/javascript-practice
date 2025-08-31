@@ -90,4 +90,11 @@ Practice for understanding DOM style and `classList` methods, including:
 - Reading styles: `getComputedStyle(element)`  
 - Class handling: `classList.add()`, `classList.remove()`, `classList.toggle()`, `classList.contains()`  
 
+---
 
+## Day 10 ✅ – Form Validation
+Practice on form validation using JavaScript, including:
+- Username validation (minimum length requirement)  
+- Email validation using regular expressions  
+- Phone number validation with regex  
+- Error message handling and success message display  
