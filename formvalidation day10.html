@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <style>
+    .error { color: red; font-size: 14px; }
+    .success { color: green; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="myform" onsubmit="return validateform()">
+
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" placeholder="Enter your name">
+    <span id="usernameerror" class="error"></span><br>
+
+    <label for="Phonenumber">Phone Number</label><br>
+    <input type="number" id="number" name="number" placeholder="Enter your number">
+    <span id="PhonenumberError" class="error"></span><br>
+
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" placeholder="Enter your email">
+    <span id="emailError" class="error"></span><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- ✅ Added this element because earlier "result.textContent" was failing -->
+  <p id="result" class="success"></p>
+
+  <script>
+    function validateform() {
+      let isValid = true;
+
+      let Username = document.getElementById("username").value.trim();
+      let Phonenumber = document.getElementById("number").value.trim();
+      let email = document.getElementById("email").value.trim();
+
+      let usernameError = document.getElementById("usernameerror");
+      // ✅ Changed "emailerror" → "emailError" (case-sensitive fix)
+      let emailError = document.getElementById("emailError");
+      // ✅ Changed "phoneError" mismatch → using correct "PhonenumberError"
+      let phoneError = document.getElementById("PhonenumberError");
+      let result = document.getElementById("result");
+
+      // ✅ Added clear error messages before validation
+      usernameError.textContent = "";
+      emailError.textContent = "";
+      phoneError.textContent = "";
+      result.textContent = "";
+
+      // Username check
+      if (Username.length < 3) {
+        usernameError.textContent = "Username must be at least 3 characters";
+        isValid = false;   // ✅ Removed wrong "return false" from here
+      }
+
+      // Email check
+      let emailRegex=/^[A-Z]{1}[a-z]{1,}[0-9]{1,}@[a-z]{1,}\.[a-z]{1,}$/;
+      if (!emailRegex.test(email)) {
+        emailError.textContent = "Enter a valid email address";
+        isValid = false;
+      }
+
+      // Phone number check
+      let phoneRegex=/[6-9][0-9]{9}$/;
+      if (!phoneRegex.test(Phonenumber)) {
+        phoneError.textContent = "Enter a valid 10-digit phone number.";
+        isValid = false;
+      }
+
+      // Empty field check
+      if (Username === "" || Phonenumber === "" || email === "") {
+        alert("Every field is required");
+        isValid = false;
+      }
+
+      // ✅ Added success alert
+      if (isValid) {
+        alert("Form submitted successfully!");
+        result.textContent = "Form submitted successfully!";
+      }
+
+      return isValid; // ✅ keeps form from submitting if invalid
+    }
+  </script>
+</body>
+</html>
