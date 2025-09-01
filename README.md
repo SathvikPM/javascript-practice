@@ -98,3 +98,18 @@ Practice on form validation using JavaScript, including:
 - Email validation using regular expressions  
 - Phone number validation with regex  
 - Error message handling and success message display  
+
+---
+
+## 🌐 Browser Web APIs Cheat Sheet (Descriptions Only)
+
+- **DOM & Document APIs:** Access and manipulate HTML elements and styles.  
+- **Event Handling APIs:** Add/remove event listeners and handle user input.  
+- **Timers & Scheduling:** Run code later, repeatedly, or animate smoothly.  
+- **Networking APIs:** Make HTTP requests, real-time communication, and live updates.  
+- **Storage & Data APIs:** Store data locally, in session, or structured databases.  
+- **Multimedia APIs:** Handle audio, video, graphics, and media devices.  
+- **Graphics & Animation APIs:** Draw 2D/3D graphics, work with SVG, and animate elements.  
+- **Device APIs:** Access geolocation, orientation, vibration, gamepads, and screen info.  
+- **Background & Workers:** Run background threads, service workers, push notifications, and offline tasks.  
+- **Other Useful APIs:** Manage history, URLs, files, notifications, performance, crypto, payments, and sharing.  
