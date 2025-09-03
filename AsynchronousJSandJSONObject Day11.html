@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Info Display</title>
+</head>
+<body>
+    <h2>Student Display</h2>
+
+    <button id="showBtn">Display Students for every 2 seconds</button>
+    <button id="showAllBtn">Show All Students immediately</button>
+    <button id="showonebyone">Show Students one by one</button>
+    <ul id="StudentList"></ul>
+
+    <script>
+        let students=[
+            {name:"Sathvik",age:23,city:"Davanagere"},
+            {name:"sagar",age:23,city:"Bng"},
+            {name:"Swamy",age:24,city:"Mysure"}
+        ];
+
+        let jsonStr=JSON.stringify(students); //json converted to string
+        let jsonstudents=JSON.parse(jsonStr); //string to json
+        let innerHTML="";
+
+        document.getElementById("showAllBtn").addEventListener("click",()=>
+        {
+           let list=document.getElementById("StudentList");
+           displayStudents(list,innerHTML);
+        });
+
+        function displayStudents(list,innerHTML){
+            jsonstudents.forEach(Student=>{
+            let li=document.createElement("li");
+            let textContent=`${Student.name}-${Student.age}-${Student.city}`;
+            list.append(textContent);
+            let br=document.createElement("br");
+            list.appendChild(br);
+           });
+        }
+
+        document.getElementById("showBtn").addEventListener("click",()=>{
+            let list=document.getElementById("StudentList");
+            let interval=setInterval(()=>displayStudents(list,innerHTML),2000);
+            setTimeout(()=>clearInterval(interval),10000);
+        });
+
+        document.getElementById("showonebyone").addEventListener("click",()=>{
+            let i=0;
+            let list=document.getElementById("StudentList");
+            list.innerHTML="";
+            let intervalId=setInterval(()=>{
+               if(i<jsonstudents.length){
+                let li=document.createElement("li");
+                li.textContent=`${jsonstudents[i].name} - ${jsonstudents[i].age}- ${jsonstudents[i].city}`;
+                list.appendChild(li);
+                i++;
+               }else{
+                clearInterval(intervalId);
+               }
+            },2000);
+        });
+
+        setTimeout(()=>{
+            console.log("first Student info after 3 sec: ", jsonstudents[0]);
+        },3000);
+       
+
+    </script>
+</body>
+</html>
