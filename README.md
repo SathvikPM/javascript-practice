@@ -112,4 +112,13 @@ Practice on form validation using JavaScript, including:
 - **Graphics & Animation APIs:** Draw 2D/3D graphics, work with SVG, and animate elements.  
 - **Device APIs:** Access geolocation, orientation, vibration, gamepads, and screen info.  
 - **Background & Workers:** Run background threads, service workers, push notifications, and offline tasks.  
-- **Other Useful APIs:** Manage history, URLs, files, notifications, performance, crypto, payments, and sharing.  
+- **Other Useful APIs:** Manage history, URLs, files, notifications, performance, crypto, payments, and sharing.
+
+## Day 11 ⏳ – Asynchronous JS & JSON Objects
+Practice on handling asynchronous operations and working with JSON, including:
+- `setTimeout` and `clearTimeout`
+- `setInterval` and `clearInterval`
+- JSON conversion: `JSON.stringify`, `JSON.parse`
+- Displaying data dynamically in the DOM
+- Combining timers with JSON data for sequential updates
+
