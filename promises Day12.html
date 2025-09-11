@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Promises</title>
+</head>
+<body>
+    <h1>Practice Promises</h1>
+    <button id="loaddata">LoadData</button>
+    <button id="loaddataUsingAsyncAwait">LoadData using Async Await</button>
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById("loaddata").addEventListener("click",()=>{
+            
+            let prm=new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("Data loaded sucessfully");
+                },2000);
+
+
+            });
+            prm.then(result=>{
+                document.getElementById("result").innerText=result;
+            })
+            .catch(error=>{
+                document.getElementById("result").innerText=error;
+            });
+            
+        });
+    
+        document.getElementById("loaddataUsingAsyncAwait").addEventListener("click",async()=>{
+             try{
+                let prm=new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                        resolve("Data loaded suceessfully(Async Await)");
+                    },2000);
+                });
+
+                let result=await prm;
+                document.getElementById("result").innerText=result;
+            }catch(error){
+                document.getElementById("result").innerText=error;
+            }
+        });
+    </script>
+</body>
+</html>
