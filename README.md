@@ -122,3 +122,11 @@ Practice on handling asynchronous operations and working with JSON, including:
 - Displaying data dynamically in the DOM
 - Combining timers with JSON data for sequential updates
 
+## Day 12 🔄 – Promises and Async/Await
+Practice on handling asynchronous operations with Promises, including:
+- Creating and resolving/rejecting Promises
+- Using `.then()` and `.catch()` for chaining
+- Handling async operations with `async` and `await`
+- Error handling using `try...catch`
+- Updating the DOM after Promise resolution
+
