@@ -38,12 +38,16 @@
                     },2000);
                 });
 
-                let result=await prm;
+                let result=await prm; //the function stop execting here untill the promises gets sucessfull or failure
                 document.getElementById("result").innerText=result;
             }catch(error){
                 document.getElementById("result").innerText=error;
             }
         });
+
+        setTimeout(()=>{
+            alert("this is executing"); //this is keeps exceutes..it doesnt depend on async
+        },2000);
     </script>
 </body>
 </html>
