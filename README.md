@@ -130,3 +130,12 @@ Practice on handling asynchronous operations with Promises, including:
 - Error handling using `try...catch`
 - Updating the DOM after Promise resolution
 
+## Day 13 🌐📡 – Fetch API Practice  
+
+Practice on using Fetch API to interact with external APIs and update the DOM dynamically:  
+
+- fetch with GET request → Fetch random cat facts (https://catfact.ninja/fact)  
+- fetch with GET request → Fetch all mobiles (https://api.restful-api.dev/objects)  
+- fetch with POST request → Add a new mobile to the API  
+- fetch with PUT request → Update an existing mobile  
+- Displaying API response data dynamically inside HTML elements  
