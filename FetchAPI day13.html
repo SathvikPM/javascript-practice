@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Practice</title>
+</head>
+<body>
+    <button id="getcatfacts">getCatfacts</button>
+    <div id="catfactsdisplay">
+
+    </div>
+
+    <button id="getAllMobiles">getMobiles</button>
+
+    <div id="getAllMobilesDisplay">
+
+    </div>
+
+    <button id="addMobile">addMobile</button>
+
+    <div id="addMobileDisplay">
+
+    </div>
+
+
+
+    <Script>
+
+        let catfactsdisplay=document.getElementById("catfactsdisplay");
+        let getAllMobilesDisplay=document.getElementById("getAllMobilesDisplay");
+        let addMoaddMobileDisplayb=document.getElementById("addMobileDisplay");
+
+    document.getElementById("getcatfacts").addEventListener("click",async()=>{
+            let data=await fetch("https://catfact.ninja/fact",{method:"GET"});
+            let txt=await data.json();
+            
+            catfactsdisplay.innerHTML=txt.fact+" "+txt.length;
+    });
+    document.getElementById("getAllMobiles").addEventListener("click",async()=>{
+            let data=await fetch("https://api.restful-api.dev/objects",{method:"GET"});
+            let txt=await data.json();
+            let mobilesHtml="";
+            txt.forEach(mobile=>{
+                 mobilesHtml+=`<p>${mobile.name}</p>`
+            });
+            getAllMobilesDisplay.innerHTML=mobilesHtml;
+
+    });
+
+    let mobile={
+        "name": "Apple MacBook Pro 16",
+        "data": {
+            "year": 2019,
+            "price": 1849.99,
+            "CPU model": "Intel Core i9",
+            "Hard disk size": "1 TB"
+        }
+        };
+
+    document.getElementById("addMobile").addEventListener("click",async()=>{
+        let data=await fetch("https://api.restful-api.dev/objects",
+        {
+            method:"POST",
+            headers:{
+                'Content-Type':'application/json',
+                'Accept':'application/json',
+            },
+            body: JSON.stringify(mobile)
+        
+
+        });
+        let text= await data.json();
+        addMobileDisplay.innerHTML=`<P>${text.name}+"is Added suceesfully"</p>`;
+
+
+    });
+
+
+    </Script>
+</body>
+</html>
