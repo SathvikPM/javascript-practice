@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud oprations with XMLHttpRequest</title>
+</head>
+<body>
+    <h2>XMLHttpRequest practice</h2>
+
+    <button onclick="getUser()">Get Users</button>
+    <button onclick="createUsers()">create Users</button>
+    <button onclick="updateUsers()">put update users</button>
+    <button onclick="deleteUsers()">delete users</button>
+
+    <pre id="output"></pre>
+
+
+    <script>
+        const apiurl="http://localhost:3000/users";
+        const output=document.getElementById("output");
+        
+        function getUser(){
+            const xhr=new XMLHttpRequest();
+            xhr.open("GET",apiurl,true);
+            xhr.onload=function(){
+                if(xhr.status===200){
+                    output.textContent=xhr.responseText;
+                }
+            }
+            xhr.onerror = function () {
+        output.textContent = "Request failed (server not running?)";
+       };
+            xhr.send();
+        }
+
+        function createUsers(){
+            const xhr= new XMLHttpRequest();
+            xhr.open("POST",apiurl,true);
+            xhr.setRequestHeader("Content-type","application/json;charset=UTF-8");
+            xhr.onload=function(){
+                output.textContent="user Created:" +xhr.responseText;
+            };
+            const newUser={name:"New user",email:"new@example.com"};
+            xhr.send(JSON.stringify(newUser));
+
+        }
+
+
+
+    </script>
+</body>
+</html>
