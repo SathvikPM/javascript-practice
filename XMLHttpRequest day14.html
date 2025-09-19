@@ -46,6 +46,29 @@
 
         }
 
+        function updateUsers(){
+            const xhr=new XMLHttpRequest();
+            xhr.open("PUT",apiurl+"/1",true);
+            xhr.setRequestHeader("content-type","application/json;charset=UTF-8");
+            console.log(xhr)
+            xhr.onload=function(){
+                output.textContent="user updated: "+xhr.responseText;
+            };
+            const updatedUser={name:"Upadated Sathvik",email:"updated@gmail.com"};
+            xhr.send(JSON.stringify(updateUsers));
+        }
+
+        function deleteUsers(){
+            const xhr=new XMLHttpRequest();
+            xhr.open("DELETE",apiurl+"/1",true);
+            xhr.onload=function(){
+                if(xhr.status===200){
+                    output.textContent="User deleted!"
+                }
+            };
+            xhr.send();
+        }
+
 
 
     </script>
