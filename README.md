@@ -18,6 +18,10 @@ Daily practice files for learning **JavaScript DOM, Events, and APIs**.
 - **Day 14:** XMLHttpRequest CRUD operations ⚡📂  
   - GET, POST, PUT, DELETE  
   - Handle JSON and update DOM  
+- **Day 15:** Modals & SweetAlert 🪟✨  
+  - Custom modal using HTML, CSS, and JS  
+  - Event handling for open/close modal  
+  - Basic SweetAlert usage
 
 ---
 
