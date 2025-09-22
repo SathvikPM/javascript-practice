@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance UI features</title>
+</head>
+<body>
+
+    <h2>Image Slider</h2>
+    <img id="slider" src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-118143566.jpg"
+    alt="slider">
+    <button  id="prevbtn" onclick="prevImage()">prev</button>
+    <button id="nextbtn" onclick="nextImage()">next</button>
+
+    <script>
+        let images=[
+            "https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-118143566.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ718nztPNJfCbDJjZG8fOkejBnBAeQw5eAUA&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykzoZeCE0p7LeuyHnLYCdPP2jju9d5PaMeA&s",
+        ]
+        let currentIndex=0;
+
+        function showImage(index){
+            document.getElementById("slider").src=images[index];
+            if(index===images.length-1){
+               document.getElementById("nextbtn").style.display="none","inline";
+            }
+             if(currentIndex===0){
+                document.getElementById("prevbtn").style.display="none","inline";
+            }
+        }
+
+        function nextImage(){
+            currentIndex=currentIndex+1;
+            showImage(currentIndex);
+            
+        }
+
+        function prevImage(){
+            currentIndex=(currentIndex-1);
+            showImage(currentIndex);
+           
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
