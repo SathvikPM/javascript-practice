@@ -13,7 +13,30 @@
     <button  id="prevbtn" onclick="prevImage()">prev</button>
     <button id="nextbtn" onclick="nextImage()">next</button>
 
+
+
+    <h2>Tabs</h2>
+    <button onclick="showTab('tab1')">Tab 1</button>
+    <button onclick="showTab('tab2')">Tab 2</button>
+    <button onclick="showTab('tab3')">Tab 3</button>
+
+    <div id="tab1">This is Tab1</div>
+    <div id="tab2" style="display: none;">This is Tab2</div>
+    <div id="tab3" style="display: none;">This is Tab3</div>
+
+    <h2>Accordion</h2>
+    <button onclick="toggleAccordion('section1')">Section 1</button>
+    <div id="section1" style="display: none;">This is section 1 Content</div>
+
+    <button onclick="toggleAccordion('section2')">Section 2</button>
+    <div id="section2" style="display: none;">This is section 2 Content</div>
+
+    <button onclick="toggleAccordion('section3')">Section 3</button>
+    <div id="section3" style="display: none;">This is section 2 Content</div>
+
     <script>
+
+        //for Images
         let images=[
             "https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-118143566.jpg",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ718nztPNJfCbDJjZG8fOkejBnBAeQw5eAUA&s",
@@ -23,11 +46,16 @@
 
         function showImage(index){
             document.getElementById("slider").src=images[index];
+
+              // Reset visibility each time
+            document.getElementById("prevbtn").style.display = "inline-block";
+            document.getElementById("nextbtn").style.display = "inline-block";
+
             if(index===images.length-1){
-               document.getElementById("nextbtn").style.display="none","inline";
+               document.getElementById("nextbtn").style.display="none";
             }
              if(currentIndex===0){
-                document.getElementById("prevbtn").style.display="none","inline";
+                document.getElementById("prevbtn").style.display="none";
             }
         }
 
@@ -41,6 +69,25 @@
             currentIndex=(currentIndex-1);
             showImage(currentIndex);
            
+        }
+        //for Tabs
+        function showTab(tabId){
+            document.getElementById("tab1").style.display="none";
+            document.getElementById("tab2").style.display="none";
+            document.getElementById("tab3").style.display="none";
+
+            document.getElementById(tabId).style.display="block";
+        }
+
+        //for ACCORDION 
+        function toggleAccordion(sectionId){
+            let section=document.getElementById(sectionId);
+
+            if(section.style.display === "none"){
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
         }
 
 
