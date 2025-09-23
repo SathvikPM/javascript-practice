@@ -1,6 +1,6 @@
 # JavaScript Practice Files 📁
 
-Daily practice files for learning **JavaScript DOM, Events, and APIs**.  
+Daily practice files for learning **JavaScript DOM, Events, and UI components**.  
 
 ---
 
@@ -21,10 +21,16 @@ Daily practice files for learning **JavaScript DOM, Events, and APIs**.
 - **Day 15:** Modals & SweetAlert 🪟✨  
   - Custom modal using HTML, CSS, and JS  
   - Event handling for open/close modal  
-  - Basic SweetAlert usage
+  - Basic SweetAlert usage  
+- **Day 16 (Today): Advanced UI Components 🖼️📑**  
+  - **Image Slider** – show/hide next & prev buttons dynamically  
+  - **Tabs** – switch between multiple sections dynamically  
+  - **Accordion** – toggle visibility of content sections  
 
 ---
 
 ## 🌐 Browser Web APIs
 
-- DOM & Document, Event Handling, Timers, Networking, Storage, Multimedia, Graphics & Animation, Device APIs
+- DOM & Document, Event Handling, Timers, Networking, Storage, Multimedia, Graphics & Animation, Device APIs  
+
+
