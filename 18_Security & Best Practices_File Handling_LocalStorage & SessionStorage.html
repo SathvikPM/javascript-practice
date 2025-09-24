@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+         body {
+      font-family: Arial, sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark {
+      background: #222;
+      color: white;
+    }
+    #preview {
+      display: block;
+      margin-top: 10px;
+      max-width: 200px;
+      border: 1px solid #ccc;
+    }
+    </style>
+</head>
+<body>
+ <!-- Dark mode toggle -->
+<button id="toogletheme">Dark mode</button>
+
+<h1>Hii How  Are u</h1>
+
+<hr>
+
+<label for="fileInput">Upload Image</label>
+<input type="file" id="fileInput" accept="image/*">
+<img id="preview" src="" alt="Image preview will appear here">
+
+
+
+<script>
+
+    //for local storage
+    const toggleBtn=document.getElementById("toogletheme");
+    const currentTheme=localStorage.getItem("theme");
+    if(currentTheme==="dark"){
+        document.body.classList.toggle("dark");
+    }
+    toggleBtn.addEventListener("click",()=>{
+        document.body.classList.toggle("dark");
+        if(document.body.classList.contains("dark")){
+            localStorage.setItem("theme","dark");
+        }else{
+            localStorage.setItem("theme","light");
+        }
+    });
+
+    //for filehanding
+    //    const 
+
+
+
+
+</script>
+
+    
+</body>
+</html>
