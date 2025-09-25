@@ -22,15 +22,17 @@ Daily practice files for learning **JavaScript DOM, Events, and UI components**.
   - Custom modal using HTML, CSS, and JS  
   - Event handling for open/close modal  
   - Basic SweetAlert usage  
-- **Day 16 (Today): Advanced UI Components 🖼️📑**  
+- **Day 16:** Advanced UI Components 🖼️📑  
   - **Image Slider** – show/hide next & prev buttons dynamically  
   - **Tabs** – switch between multiple sections dynamically  
   - **Accordion** – toggle visibility of content sections  
+- **Day 17 (Today): Dark Mode, Image Preview & Storage 🌙🖼️💾**  
+  - Dark mode toggle with **localStorage** persistence  
+  - Image upload preview with type & size validation (≤2MB)  
+  - Session storage demo using `sessionStorage`  
 
 ---
 
 ## 🌐 Browser Web APIs
 
 - DOM & Document, Event Handling, Timers, Networking, Storage, Multimedia, Graphics & Animation, Device APIs  
-
-
