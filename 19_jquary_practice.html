@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic jquary Practice</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+    .box {
+      width: 150px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+    <h1 id="heading">Hello jquary</h1>
+    <p class="para">This is a paragraph a <span>span Inside</span>.</p>
+    <input type="text" id="myInput" value="Type here">
+    <button id="btn">click me</button>
+    <div class="box" data-info="sample">Box</div>
+    <ul id="myList">
+        <li>Apple</li>
+        <li class="fruit">banana</li>
+    <li>Orange</li>
+    <ul>
+    <a href="https://google.com" id="myLink" target="_blank">go to google</a>  
+    
+    <script>
+        $(document).ready(function(){
+
+            $("#heading").css("color","blue");
+            $(".para").addClass("highlight");
+            $('span').text("change span text!");
+            $('[data-info="simple"]').css("border","2px solid green");
+            $('#myList li:first').css("color","purple");
+            $('#myList li:last').css("color","orange");
+            $('#myList li:eq(1)').css("font-weight","bold");
+
+
+            $('#btn').click(function(){
+                  alert("heading text: "+ $('#heading').text());
+                  $('#heading').html("Heading <em>updated</em>!");
+                  alert($('#myInput').val());
+
+                  $('.box').css("background-color","yellow");
+                  $('.para').removeClass("highlight");
+                  $('#heading').toggleClass("highlight");
+
+                  $("#myInput").attr("placeholder","Now type here!");
+                  $("#myInput").removeAttr("value");
+                  $("#myLink").prop("href","https://www.youtube.com/");
+
+
+
+
+            })
+
+
+
+
+
+
+        })
+    </script>
+</body>
+</html>
