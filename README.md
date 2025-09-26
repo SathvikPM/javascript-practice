@@ -4,7 +4,7 @@ Daily practice files for learning **JavaScript DOM, Events, and UI components**.
 
 ---
 
-## 📝 Practice Highlights
+## 📝 JavaScript Practice Highlights
 
 - **Day 1–5:** DOM selection, manipulation, attributes, events 🖱️💻  
 - **Day 6–7:** Common events, window object, and event handling 🌐🪟  
@@ -36,3 +36,13 @@ Daily practice files for learning **JavaScript DOM, Events, and UI components**.
 ## 🌐 Browser Web APIs
 
 - DOM & Document, Event Handling, Timers, Networking, Storage, Multimedia, Graphics & Animation, Device APIs  
+
+---
+
+## 🎯 jQuery Practice Highlights
+
+- DOM selection, text/HTML/values, CSS & attributes manipulation, add/remove/toggle classes  
+- Event handling (`.click()`, `.on()`, `.hover()`) and comparison with plain JS
+
+
+---
