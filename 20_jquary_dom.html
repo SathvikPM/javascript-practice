@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquary DOM practice</title>
+    <style>
+    .box { border: 1px solid black; padding: 10px; margin: 5px; }
+  </style>
+</head>
+<body>
+    <div id="parentDiv" class="box">
+        <p>paragraph 1</p>
+        <p>paragraph 2</p>
+        <span>span 1</span>
+
+    </div>
+
+    <div id="anotherDiv" class="box">Another Div</div>
+
+    <button id="textbtn">Test</button>
+
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+
+        //Add Remove elements
+        $(document).ready(function(){
+            $('#parentDiv').append('<p>Appended paragaraph</p>');
+
+            $("#parentDiv").prepend("<p>prepended paragraph</p>");
+
+            $("#parentDiv").after("<p>parentdiv after</p>")
+
+            $("#parentDiv").before("<p>parentDiv before</p>");
+
+            // setTimeout(()=>{
+            //     $("#parentDiv span").remove();
+            // },2000);
+
+            // setTimeout(()=>{
+            //     $("#anotherDiv").empty();
+            // },4000);
+        });
+
+     
+                    // in plane JS 
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const parentDiv = document.getElementById("parentDiv");
+    //     const anotherDiv = document.getElementById("anotherDiv");
+
+    //     // append
+    //     parentDiv.insertAdjacentHTML("beforeend", "<p>Appended paragraph</p>");
+
+    //     // prepend
+    //     parentDiv.insertAdjacentHTML("afterbegin", "<p>prepended paragraph</p>");
+
+    //     // after
+    //     parentDiv.insertAdjacentHTML("afterend", "<p>parentdiv after</p>");
+
+    //     // before
+    //     parentDiv.insertAdjacentHTML("beforebegin", "<p>parentDiv before</p>");
+
+    //     // remove <span> inside parentDiv after 2s
+    //     setTimeout(() => {
+    //         const spans = parentDiv.querySelectorAll("span");
+    //         spans.forEach(span => span.remove());
+    //     }, 2000);
+
+    //     // empty anotherDiv after 4s
+    //     setTimeout(() => {
+    //         anotherDiv.innerHTML = "";
+    //     }, 4000);
+    // });
+
+
+           //clone  elements
+    let clone=$("#parentDiv").clone(true);
+    $("#anotherDiv").append(clone);
+
+
+             // in plane JS
+    // let parentDiv=document.getElementById("parentDiv");
+    // let anotherDiv=document.getElementById("anotherDiv");
+    // const clone1 =parentDiv.cloneNode(true);
+    // anotherDiv.appendChild(clone1);
+     
+
+              //traversing dom
+    console.log($("#parentDiv p").parent());
+
+    console.log($("#parentDiv p").parents());
+
+    console.log($("#parentDiv").children());
+
+    console.log($("#parentDiv").find('span'));
+
+
+    console.log($("#parentDiv p"),siblings());
+
+    console.log($("#parentDiv p:first").next());
+    console.log($("#parentDiv p:last").prev());
+
+
+    console.log($("#parentDiv span").closest('.box'));
+
+
+    console.log($('#parentDiv p').first());
+    console.log($("#parentDiv p").last());
+    console.log($("#parenntDiv").eq(1));
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
