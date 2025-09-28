@@ -33,13 +33,19 @@ Daily practice files for learning **JavaScript DOM, Events, and UI components**.
 
 ---
 
-## 🌐 Browser Web APIs
-
-- DOM & Document, Event Handling, Timers, Networking, Storage, Multimedia, Graphics & Animation, Device APIs  
-
----
-
 ## 🎯 jQuery Practice Highlights
 
 - DOM selection, text/HTML/values, CSS & attributes manipulation, add/remove/toggle classes  
 - Event handling (`.click()`, `.on()`, `.hover()`) and comparison with plain JS  
+- **DOM Manipulation Practice:**  
+  - Add/Prepend/Append elements  
+  - Remove/Empty elements  
+  - Clone elements  
+  - Traversing DOM (`parent`, `children`, `siblings`, `find`, `closest`, `first`, `last`, `eq`)  
+  - Combined examples with **plain JS equivalents** for learning comparison  
+
+---
+
+## 🌐 Browser Web APIs
+
+- DOM & Document, Event Handling, Timers, Networking, Storage, Multimedia, Graphics & Animation, Device APIs  
