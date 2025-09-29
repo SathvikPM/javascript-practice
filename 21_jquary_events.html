@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Practice</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .box { width: 150px; height: 150px; background: lightblue; margin: 10px; text-align: center; line-height: 150px; }
+        .highlight { background: orange; }
+    </style>
+</head>
+<body>
+    <h2>events practice</h2>
+
+    <div id="mousebox" class="box">Mouse Box</div>
+    
+
+    <script>
+        $(document).ready(()=>{
+  
+        $("#mousebox").click(function(){
+            $(this).toggleClass("highlight").text("Clicked!");
+        })
+
+        $("#mousebox").dblclick(function(){
+            $(this).css('background','green').text("Double clicked");
+
+        })
+
+        $("#mousebox").mouseenter(function(){
+            $(this).css('border','2px solid red');
+        })
+
+        $("#mousebox").mouseleave(function(){
+            $(this).css('border','none');
+        })
+
+
+
+        })
+    </script>
+</body>
+
+
+</html>
