@@ -70,8 +70,3 @@ Daily practice files for learning **JavaScript DOM, Events, UI components, and j
 
 ---
 
-## ⚡ How to Use
-
-1. Clone this repository:  
-   ```bash
-   git clone <your-repo-url>
