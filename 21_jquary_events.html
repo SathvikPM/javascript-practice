@@ -13,12 +13,31 @@
 <body>
     <h2>events practice</h2>
 
+    <!-- Mouse Events  -->
     <div id="mousebox" class="box">Mouse Box</div>
-    
+
+    <!-- keyboard events  -->
+    <input type="text" id="keyInput" placeholder="type something">
+
+    <form id="myform">
+        <input type="text" id="name" placeholder="Enter name" required>
+        <select id="dropdown">
+            <option value="">Select</option>
+            <option value="one">One</option>
+            <option value="two">Two</option>
+        </select>
+        <button type="submit">submit</button>
+    </form> 
+
+    <div id="dynamicArea">
+        <button id="addbtn" >Add Dynamic Button</button>
+    </div>
+
 
     <script>
         $(document).ready(()=>{
   
+                //mouse events
         $("#mousebox").click(function(){
             $(this).toggleClass("highlight").text("Clicked!");
         })
@@ -36,9 +55,123 @@
             $(this).css('border','none');
         })
 
+    //      // Click event => plane Css Equalenet
+    // mousebox.addEventListener("click", function() {
+    //     this.classList.toggle("highlight");
+    //     this.textContent = "Clicked!";
+    // });
 
+    // // Double-click event
+    // mousebox.addEventListener("dblclick", function() {
+    //     this.style.background = "green";
+    //     this.textContent = "Double clicked";
+    // });
 
+    // // Mouse enter
+    // mousebox.addEventListener("mouseenter", function() {
+    //     this.style.border = "2px solid red";
+    // });
+
+    // // Mouse leave
+    // mousebox.addEventListener("mouseleave", function() {
+    //     this.style.border = "none";
+
+    $("#keyInput").keydown(function(e){
+        console.log("keydown: ", e.key);
+    })
+
+    $("#keyInput").keyup(function(e){
+        console.log("key up: ", e.key);
+    })
+
+    $("#keyInput").keypress(function(e){
+        console.log("key press:",e.key);
+    })
+
+    // const keyInput = document.getElementById("keyInput");
+
+    // keyInput.addEventListener("keydown", function(e) {
+    //     alert("keydown: " + e.key);
+    // });
+
+    // keyInput.addEventListener("keyup", function(e) {
+    //     alert("keyup: " + e.key);
+    // });
+
+    // keyInput.addEventListener("keypress", function(e) {
+    //     alert("keypress: " + e.key);
+    // });
+
+     $("#myForm").submit(function(e){
+        e.preventDefault();
+        alert("form submited"+ $("#name").val());
+     })
+
+     $("#dropdown").change(function(){
+        alert("you selected "+$(this).val());
+     })
+
+     $("#name").focus(function(){
+        $(this).css('background','red');
+     })
+
+     $('#name').blur(function(){
+        $(this).css('background','white');
+     })
+
+      $("#addbtn").click(function(){
+        $("#dynamicArea").append('<button>Dynamic Button</button>')
         })
+
+        setTimeout(function(){
+            $("#mouseBox").off('click');
+            console.log("clicked event removed from mousebox")
+        },10000)
+
+        //         // form submit
+        // document.getElementById("myForm").addEventListener("submit", function(e) {
+        //     e.preventDefault();
+        //     alert("form submitted " + document.getElementById("name").value);
+        // });
+
+        // // dropdown change
+        // document.getElementById("dropdown").addEventListener("change", function() {
+        //     alert("you selected " + this.value);
+        // });
+
+        // // focus
+        // document.getElementById("name").addEventListener("focus", function() {
+        //     this.style.background = "red";
+        // });
+
+        // // blur
+        // document.getElementById("name").addEventListener("blur", function() {
+        //     this.style.background = "white";
+        // });
+
+        // // add button dynamically
+        // document.getElementById("addbtn").addEventListener("click", function() {
+        //     document.getElementById("dynamicArea")
+        //             .insertAdjacentHTML("beforeend", "<button>Dynamic Button</button>");
+        // });
+
+        // // remove click event after 10 seconds
+        // const mouseBox = document.getElementById("mouseBox");
+
+        // function clickHandler() {
+        //     alert("MouseBox clicked!");
+        // }
+        // mouseBox.addEventListener("click", clickHandler);
+
+        // setTimeout(function() {
+        //     mouseBox.removeEventListener("click", clickHandler);
+        //     console.log("clicked event removed from mousebox");
+        // }, 10000);
+
+  })
+       
+
+
     </script>
 </body>
 
