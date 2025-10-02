@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Practice Playground</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .box {
+      width: 150px;
+      height: 150px;
+      background: lightblue;
+      margin: 10px;
+      text-align: center;
+      line-height: 150px;
+      position: relative;
+    }
+    ul, table { margin: 15px 0; }
+    table { border-collapse: collapse; width: 300px; }
+    td { border: 1px solid black; padding: 5px; text-align: center; }
+    .special { font-weight: bold; color: red; }
+  </style>
+</head>
+<body>
+  <h2>🚀 jQuery Playground</h2>
+
+  <!-- Box for Effects/Animations -->
+  <div id="box" class="box">Box</div>
+  
+  <h3>Basic Effects</h3>
+  <button id="showBtn">Show</button>
+  <button id="hideBtn">Hide</button>
+  <button id="toggleBtn">Toggle</button>
+  <br><br>
+  <button id="fadeInBtn">Fade In</button>
+  <button id="fadeOutBtn">Fade Out</button>
+  <button id="fadeToggleBtn">Fade Toggle</button>
+  <button id="fadeToBtn">Fade To (30%)</button>
+  <br><br>
+  <button id="slideUpBtn">Slide Up</button>
+  <button id="slideDownBtn">Slide Down</button>
+  <button id="slideToggleBtn">Slide Toggle</button>
+
+  <h3>Custom Animations</h3>
+  <button id="animateBtn">Animate</button>
+  <button id="chainBtn">Chain Animations</button>
+  <button id="stopBtn">Stop Animation</button>
+
+  <h3>Traversing & Filtering</h3>
+  <ul>
+    <li id="item1">Item 1</li>
+    <li id="item2" class="special">Item 2 (special)</li>
+    <li id="item3">Item 3</li>
+    <li id="nestedItem"><span>Nested Item inside span</span></li>
+  </ul>
+  <button id="nextBtn">Highlight Next of Item 2</button>
+  <button id="prevBtn">Highlight Prev of Item 2</button>
+  <button id="closestBtn">Highlight Closest UL of Nested Item</button>
+  <button id="firstLastBtn">Highlight First & Last Items</button>
+  <button id="filterBtn">Highlight Only Special Items</button>
+  <button id="notBtn">Highlight Non-Special Items</button>
+  <button id="isBtn">Check If Item1 Visible</button>
+
+  <h3>Odd/Even Table Highlight</h3>
+  <table>
+    <tr><td>Row 1</td></tr>
+    <tr><td>Row 2</td></tr>
+    <tr><td>Row 3</td></tr>
+    <tr><td>Row 4</td></tr>
+    <tr><td>Row 5</td></tr>
+  </table>
+  <button id="highlightTableBtn">Highlight Odd/Even Rows</button>
+
+
+  <script>
+   $(document).ready(function(){
+
+            
+    // Show/Hide/Toggle
+  $("#showBtn").click(()=>$("#box").show());   //shows the box
+  $("#hideBtn").click(()=>$("#box").hide());   //hides the box
+  $("#toggleBtn").click(()=>$("#box").toggle()); //toggles between show/hide
+
+
+        //   JS Equalent =>show/Hide/Toggle
+//     document.addEventListener("DOMContentLoaded", function() {
+//     const box = document.getElementById("box");
+
+//     document.getElementById("showBtn").addEventListener("click", function() {
+//         box.style.display = "block";  // Show the box
+//     });
+
+//     document.getElementById("hideBtn").addEventListener("click", function() {
+//         box.style.display = "none";   // Hide the box
+//     });
+
+//     document.getElementById("toggleBtn").addEventListener("click", function() {
+//         if (box.style.display === "none" || box.style.display === "") {
+//             box.style.display = "block";  // Show if hidden
+//         } else {
+//             box.style.display = "none";   // Hide if visible
+//         }
+//     });
+// });
+
+
+            // Fading =>js equalent
+    $("#fadeInBtn").click(()=>$("#box").fadeIn());     //fades in the box (appears gradually)
+  $("#fadeOutBtn").click(()=>$("#box").fadeOut());   //fades out the box (disappears gradually)
+  $("#fadeToggleBtn").click(()=>$("#box").fadeToggle()); //toggles between fade in/out
+  $("#fadeToBtn").click(()=>$("#box").fadeTo(1000,0.3)); //fades box to 30% opacity in 1s
+
+
+
+       //plane JS Equalent
+//     document.addEventListener("DOMContentLoaded", function() {
+//     const box = document.getElementById("box");
+
+//     // Make sure the box can animate opacity smoothly
+//     box.style.transition = "opacity 1s"; // default 1 second
+
+//     // Fade In
+//     document.getElementById("fadeInBtn").addEventListener("click", function() {
+//         box.style.display = "block";   // ensure element is visible
+//         box.style.opacity = 1;          // fade in to full opacity
+//     });
+
+//     // Fade Out
+//     document.getElementById("fadeOutBtn").addEventListener("click", function() {
+//         box.style.opacity = 0;          // fade out
+//         setTimeout(() => box.style.display = "none", 1000); // hide after fade
+//     });
+
+//     // Fade Toggle
+//     document.getElementById("fadeToggleBtn").addEventListener("click", function() {
+//         if (window.getComputedStyle(box).display === "none" || box.style.opacity == 0) {
+//             box.style.display = "block";
+//             setTimeout(() => box.style.opacity = 1, 10); // fade in
+//         } else {
+//             box.style.opacity = 0; 
+//             setTimeout(() => box.style.display = "none", 1000); // fade out
+//         }
+//     });
+
+//     // Fade To (specific opacity)
+//     document.getElementById("fadeToBtn").addEventListener("click", function() {
+//         box.style.display = "block";
+//         box.style.opacity = 0.3; // fade to 30% opacity
+//     });
+// });
+
+
+                // Sliding
+  $("#slideUpBtn").click(()=>$("#box").slideUp());     //slides the box up (hides with slide)
+  $("#slideDownBtn").click(()=>$("#box").slideDown()); //slides the box down (shows with slide)
+  $("#slideToggleBtn").click(()=>$("#box").slideToggle()); //toggles between slide up/down
+
+
+                     //JS Equalent => sliding
+//     document.addEventListener("DOMContentLoaded", function() {
+//     const box = document.getElementById("box");
+
+//     // Ensure smooth height animation
+//     box.style.transition = "height 0.5s, padding 0.5s, margin 0.5s"; 
+//     box.style.overflow = "hidden"; // needed for sliding effect
+
+//     // Slide Up
+//     document.getElementById("slideUpBtn").addEventListener("click", function() {
+//         box.style.height = "0";
+//         box.style.padding = "0";
+//         box.style.margin = "0";
+//         setTimeout(() => box.style.display = "none", 500); // hide after animation
+//     });
+
+//     // Slide Down
+//     document.getElementById("slideDownBtn").addEventListener("click", function() {
+//         box.style.display = "block";
+//         const fullHeight = "150px"; // original height
+//         const padding = "0"; // set original padding if needed
+//         const margin = "10px"; // set original margin if needed
+//         setTimeout(() => {
+//             box.style.height = fullHeight;
+//             box.style.padding = "initial"; 
+//             box.style.margin = margin;
+//         }, 10);
+//     });
+
+//     // Slide Toggle
+//     document.getElementById("slideToggleBtn").addEventListener("click", function() {
+//         if (window.getComputedStyle(box).display === "none" || box.style.height === "0px") {
+//             box.style.display = "block";
+//             setTimeout(() => box.style.height = "150px", 10);
+//         } else {
+//             box.style.height = "0";
+//             setTimeout(() => box.style.display = "none", 500);
+//         }
+//     });
+// });
+
+        //animation
+   $("#animateBtn").click(()=>{  
+    $("#box").animate({
+        width:"300px",   //animate width to 300px
+        height:"300px",  //animate height to 300px
+        opacity:0.5      //animate opacity to 50%
+    },2000) //animation runs for 2 seconds
+  });
+
+  $("#chainBtn").click(()=>{  
+    $("#box")
+      .slideUp(1000)          //first slide up in 1s
+      .fadeIn(1000)           //then fade in in 1s
+      .animate({left:"200px"},1000); //then move right by 200px in 1s
+  });
+
+  $("#stopBtn").click(()=>$("#box").stop()); //stops the current animation immediately
+
+
+             //animation=>plain JS
+    //  box.style.transition = "height 1s ease";
+    //   box.style.height = "0px";
+
+    //   setTimeout(() => {
+    //     // Fade In (restore opacity)
+    //     box.style.transition = "opacity 1s ease";
+    //     box.style.opacity = "1";
+
+    //     setTimeout(() => {
+    //       // Move right (left 200px)
+    //       box.style.transition = "left 1s ease";
+    //       box.style.left = "200px";
+    //       box.style.height = "150px"; // restore height after fade
+    //     }, 1000);
+
+    //   }, 1000);
+    // });
+
+    // // Stop (cancel transition)
+    // document.getElementById("stopBtn").addEventListener("click", () => {
+    //   const computed = getComputedStyle(box);
+    //   box.style.transition = "none"; // remove transition instantly
+    //   box.style.width = computed.width;
+    //   box.style.height = computed.height;
+    //   box.style.left = computed.left;
+    //   box.style.opacity = computed.opacity;
+    // });
+
+   // Traversing
+  $("#nextBtn").click(()=>{$("#item2").next().css("background","yellow")}); //highlights the next sibling of item2 with yellow background
+
+  $("#prevBtn").click(()=>{$("#item2").prev().css("background","green")}); //highlights the previous sibling of item2 with green background
+
+  $("#closestBtn").click(()=>{$("#nestedItem").closest("ul").css("border","2px solid green")});  //finds the closest parent <ul> of nestedItem and adds green border
+
+  $("#firstLastBtn").click(()=>{
+    $("li").first().css("color","green");  //colors first li green
+    $("li").last().css("color","green");   //colors last li green
+  });
+            //traversing=>JS Equalent
+//Next Button
+// document.getElementById("nextBtn").addEventListener("click", () => {
+//   document.getElementById("item2").nextElementSibling.style.background = "yellow";
+// });
+
+// // Previous Button
+// document.getElementById("prevBtn").addEventListener("click", () => {
+//   document.getElementById("item2").previousElementSibling.style.background = "green";
+// });
+
+// // Closest UL Button
+// document.getElementById("closestBtn").addEventListener("click", () => {
+//   document.getElementById("nestedItem").closest("ul").style.border = "2px solid green";
+// });
+
+// // First & Last Button
+// document.getElementById("firstLastBtn").addEventListener("click", () => {
+//   document.querySelector("li:first-child").style.color = "green";   // first li
+//   document.querySelector("li:last-child").style.color = "green";    // last li
+// });
+
+
+    //filtering
+    $("#filterBtn").click(()=>{ 
+    $("li").filter(".special").css("background","pink") 
+  }); //highlights only special li items with pink
+
+  $("#notBtn").click(()=>{ 
+    $("li").not(".special").css("background","lightgray") 
+  }); //highlights all li except special with gray
+
+  $("#isBtn").click(()=>{  
+    if($("#item1").is(":visible")){  //checks if item1 is visible
+        alert("Item1 is vissible")   //shows alert if visible
+    }else{
+        alert("Item1 is hidden");    //shows alert if hidden
+    }
+  });
+
+
+             //plain js equalent for filtring
+// Filter: highlight only .special items
+// document.getElementById("filterBtn").addEventListener("click", () => {
+//   document.querySelectorAll("li.special").forEach(li => {
+//     li.style.background = "pink";
+//   });
+// });
+
+// // Not: highlight all li except .special
+// document.getElementById("notBtn").addEventListener("click", () => {
+//   document.querySelectorAll("li").forEach(li => {
+//     if (!li.classList.contains("special")) {
+//       li.style.background = "lightgray";
+//     }
+//   });
+// });
+
+// // Is: check if #item1 is visible
+// document.getElementById("isBtn").addEventListener("click", () => {
+//   const item1 = document.getElementById("item1");
+//   if (item1 && item1.offsetParent !== null) { 
+//     // offsetParent is null when element is hidden (display:none)
+//     alert("Item1 is visible");
+//   } else {
+//     alert("Item1 is hidden");
+//   }
+// });
+
+
+   // Odd/Even table rows
+  $("#highlightTableBtn").click(()=>{  
+    $("tr:odd").css("background","lightblue");   //odd rows become lightblue
+    $("tr:even").css("background","lightgreen"); //even rows become lightgreen
+  }); 
+
+      //Highlight odd/even=>JS equalent
+//     document.getElementById("highlightTableBtn").addEventListener("click", () => {
+//   let rows = document.querySelectorAll("tr");
+//   rows.forEach((row, index) => {
+//     if (index % 2 === 0) {
+//       row.style.background = "lightgreen";  // even index
+//     } else {
+//       row.style.background = "lightblue";   // odd index
+//     }
+//   });
+// });
+
+
+
+
+   });
+
+
+
+  </script>
+</body>
