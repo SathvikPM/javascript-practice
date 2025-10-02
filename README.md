@@ -1,6 +1,8 @@
 # JavaScript & jQuery Practice Files 📁
 
-Daily practice files for learning **JavaScript DOM, Events, UI components, and jQuery**.  
+Daily practice files for learning **JavaScript DOM, Events, Animations, UI components, and jQuery**.  
+
+This repository is designed for hands-on learning with **practical examples** and **plain JavaScript equivalents** for comparison.  
 
 ---
 
@@ -16,48 +18,34 @@ Daily practice files for learning **JavaScript DOM, Events, UI components, and j
 - **12:** Promises & `async/await` 🔄⚡  
 - **13:** Fetch API (GET, POST, PUT) 🌐📡  
 - **14:** XMLHttpRequest CRUD operations ⚡📂  
-  - GET, POST, PUT, DELETE  
-  - Handle JSON and update DOM dynamically  
 - **15:** Modals & SweetAlert 🪟✨  
-  - Custom modals using HTML, CSS, and JS  
-  - Event handling for open/close modal  
-  - Basic SweetAlert usage  
 - **16:** Advanced UI Components 🖼️📑  
-  - **Image Slider** – show/hide next & previous buttons dynamically  
-  - **Tabs** – switch between multiple sections dynamically  
-  - **Accordion** – toggle visibility of content sections  
 - **17:** Dark Mode, Image Preview & Storage 🌙🖼️💾  
-  - Dark mode toggle with **localStorage** persistence  
-  - Image upload preview with type & size validation (≤2MB)  
-  - Session storage demo using `sessionStorage`  
 
 ---
+
+## 🚀 jQuery Playground (Day 5–7)
+
+- **File:** `jquery-playground.html`  
+- **Purpose:** Interactive practice for **jQuery effects, animations, DOM traversing, filtering, and table manipulation**.  
+- **Key Features:**
+  - **Basic Effects:** Show, Hide, Toggle, Fade In/Out/Toggle, Fade To  
+  - **Sliding:** Slide Up, Slide Down, Slide Toggle  
+  - **Custom Animations:** Animate width, height, opacity, chaining multiple animations, stop animations  
+  - **DOM Traversing:** Next, Previous, Closest parent, First & Last items  
+  - **Filtering:** Highlight `.special` items, non-special items, check visibility  
+  - **Table Row Highlighting:** Highlight odd/even rows  
+- **Learning Focus:** Understand **jQuery methods** and their **plain JavaScript equivalents** for better mastery.  
+
+---
+
+
 
 ## 📂 Events Practice File
 
 - **File:** `events-practice.html`  
 - **Purpose:** Learn and experiment with **mouse, keyboard, form, focus/blur, dropdown, and dynamic button events** using **jQuery**  
-- **Key Features:**
-  - Mouse events: `.click()`, `.dblclick()`, `.mouseenter()`, `.mouseleave()`  
-  - Keyboard events: `.keydown()`, `.keyup()`, `.keypress()`  
-  - Form submission and input focus/blur handling  
-  - Dropdown selection with `.change()` event  
-  - Add dynamic buttons to DOM  
-  - Remove event listeners with `.off()` after a delay  
-
----
-
-## 🎯 jQuery Practice Highlights
-
-- DOM selection, text/HTML/values, CSS & attribute manipulation  
-- Add/Remove/Toggle classes  
-- Event handling: `.click()`, `.on()`, `.hover()`  
-- DOM Manipulation Practice:  
-  - Add/Prepend/Append elements  
-  - Remove/Empty elements  
-  - Clone elements  
-  - DOM traversal (`parent`, `children`, `siblings`, `find`, `closest`, `first`, `last`, `eq`)  
-  - Comparison with plain JavaScript equivalents for learning  
+- **Key Features:** Mouse events, keyboard events, form submission, dropdown change event, dynamic buttons  
 
 ---
 
@@ -70,3 +58,7 @@ Daily practice files for learning **JavaScript DOM, Events, UI components, and j
 
 ---
 
+### 💡 Tips
+
+- Compare jQuery methods with **plain JavaScript equivalents** included in each file  
+- Open `*.html` files directly in a browser to **test interactions**  
