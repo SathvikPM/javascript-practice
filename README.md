@@ -24,7 +24,7 @@ This repository is designed for hands-on learning with **practical examples** an
 
 ---
 
-## 🚀 jQuery Playground (Day 5–7)
+## 🚀 jQuery Playground 
 
 - **File:** `jquery-playground.html`  
 - **Purpose:** Interactive practice for **jQuery effects, animations, DOM traversing, filtering, and table manipulation**.  
@@ -35,7 +35,17 @@ This repository is designed for hands-on learning with **practical examples** an
   - **DOM Traversing:** Next, Previous, Closest parent, First & Last items  
   - **Filtering:** Highlight `.special` items, non-special items, check visibility  
   - **Table Row Highlighting:** Highlight odd/even rows  
-- **Learning Focus:** Understand **jQuery methods** and their **plain JavaScript equivalents** for better mastery.  
+- **Learning Focus:** Understand **jQuery methods** and their **plain JavaScript equivalents** for better mastery.
+
+- ## 📊 DataTables AJAX Example  
+**File:** `jquery-ajax-and-datatables.html`  
+**Purpose:** Fetch and display employee data using **jQuery DataTables** with **AJAX**.  
+**Highlights:**  
+- Uses DummyJSON API for live user data  
+- Shows ID, Name, Age, Email, and Department  
+- Combines `firstName` and `lastName` using a custom render function  
+- Includes built-in search, sort, and pagination  
+ 
 
 ---
 
